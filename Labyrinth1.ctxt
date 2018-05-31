@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=Labyrinth1
-comment0.text=\n\ Write\ a\ description\ of\ class\ Labyrinth\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Labyrinth\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Labyrinth1()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Labyrinth1.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Labyrinth1.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ prepare()
-comment3.text=\n\ Bereite\ die\ Welt\ f\u00FCr\ den\ Programmstart\ vor.\n\ Das\ hei\u00DFt\:\ Erzeuge\ die\ Anfangs-Objekte\ und\ f\u00FCge\ sie\ der\ Welt\ hinzu.\n
+comment3.text=\r\n\ Bereite\ die\ Welt\ f\u00FCr\ den\ Programmstart\ vor.\r\n\ Das\ hei\u00DFt\:\ Erzeuge\ die\ Anfangs-Objekte\ und\ f\u00FCge\ sie\ der\ Welt\ hinzu.\r\n
 comment4.params=pWhich
 comment4.target=void\ prepareWithParam(int)
 numComments=5

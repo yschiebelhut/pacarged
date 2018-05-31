@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PowerUP
-comment0.text=\n\ This\ class\ is\ the\ mother\ to\ all\ other\ PowerUPs,\ enpowering\ Pacman\ to\ do\ great\ things.\n\ As\ it's\ an\ abstract\ class,\ it\ won't\ ever\ do\ anything\ itself.\n\ \n\ @author\ \n\ @version\ 0.1\n
+comment0.text=\r\n\ This\ class\ is\ the\ mother\ to\ all\ other\ PowerUPs,\ enpowering\ Pacman\ to\ do\ great\ things.\r\n\ As\ it's\ an\ abstract\ class,\ it\ won't\ ever\ do\ anything\ itself.\r\n\ \r\n\ @author\ \r\n\ @version\ 0.1\r\n
 comment1.params=
 comment1.target=void\ effect()
 numComments=2

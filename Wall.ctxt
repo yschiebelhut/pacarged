@@ -1,4 +1,4 @@
 #BlueJ class context
 comment0.target=Wall
-comment0.text=\n\ Walls\ are\ the\ objects\ that\ fill\ up\ the\ World\ and\ just\ leave\ a\ single\ way\ open\ for\ Pacman\ and\ the\ ghosts\n\ \n\ @author\ ALL\n\ @version\ 1.0-final\n
+comment0.text=\r\n\ Walls\ are\ the\ objects\ that\ fill\ up\ the\ World\ and\ just\ leave\ a\ single\ way\ open\ for\ Pacman\ and\ the\ ghosts\r\n\ \r\n\ @author\ ALL\r\n\ @version\ 1.0-final\r\n
 numComments=1

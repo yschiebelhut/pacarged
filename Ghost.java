@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Ghost extends Actor
 {
     /**
-     * Act - do whatever the Gegener wants to do. This method is called whenever
+     * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -24,9 +24,34 @@ public class Ghost extends Actor
         if(Greenfoot.getRandomNumber(100)<10) randomTurn();
         while(wallInFront()) randomTurn();
         move(1);
-	walkThroughBounds();
+        walkThroughBounds();
     }
+    
+    public void movement2() {
+        int num = Greenfoot.getRandomNumber(1);
+        if((!wallAt("r")||!wallAt("l"))&&num==1) {}
+    }
+    
+    public void movementTargeted() {
+        Labyrinth1 home = (Labyrinth1) this.getWorld();
+        Pacman player = (Pacman) home.getObjects(Pacman.class).get(0);
+        int targetX = player.getX();
+        int targetY = player.getY();
+    }
+    
+    public boolean wallAt(String direction) {
+        int obsDir = 0;
+        if(direction == "f") obsDir = this.getRotation();
+        if(direction == "l") obsDir = (this.getRotation()+360-90)%360;
+        if(direction == "r") obsDir = (this.getRotation()+90)%360;
 
+        if(obsDir==0) if(getOneObjectAtOffset(1,0,Wall.class)!=null) return true;
+        if(obsDir==90) if(getOneObjectAtOffset(0,1,Wall.class)!=null) return true;
+        if(obsDir==180) if(getOneObjectAtOffset(-1,0,Wall.class)!=null) return true;
+        if(obsDir==270) if(getOneObjectAtOffset(0,-1,Wall.class)!=null) return true;        
+        return false;
+    }
+    
     public boolean wallInFront() {
         if(getRotation()==0) if(getOneObjectAtOffset(1,0,Wall.class)!=null) return true;
         if(getRotation()==90) if(getOneObjectAtOffset(0,1,Wall.class)!=null) return true;

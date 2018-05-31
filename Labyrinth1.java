@@ -15,6 +15,7 @@ public class Labyrinth1 extends World {
         // Create a new world with 21x21 cells with a cell size of 1x1 pixels.
         super(21, 21, 35); 
         setPaintOrder(Ghost.class,Pacman.class,PowerUP.class,Food.class,Wall.class);        
+        setActOrder(Pacman.class,Ghost.class);
         prepare();
     }
     
