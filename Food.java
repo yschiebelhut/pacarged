@@ -1,24 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Food here.
+ * Food are all the red objects all over the maze. Pacman can eat them, but they don't do anything on their own...
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author ALL
+ * @version 1.0-final
  */
-public class Food extends Actor
-{
-    /**
-     * Act - do whatever the Punkt wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        
-    }  
-    
-    public void punkt() {
-    
-    
-    }
-}
+public class Food extends Actor {}

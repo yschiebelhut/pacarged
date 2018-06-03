@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Fear here.
+ * Makes walls theoretically disappear for pacman so he can walk straight through them.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Fear extends PowerUP {
+public class WallWalker extends PowerUP {
     /**
      * Wait for pacman to get in touch...
      */
