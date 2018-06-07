@@ -19,6 +19,7 @@ public class Menu1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(20, 20, 35); 
+        Greenfoot.start();
         MenuStreuerung menuStreuerung = new MenuStreuerung(); // Erstellt das Menu
         addObject(menuStreuerung,10,9);
         StartLevel1 startLevel1 = new StartLevel1();
@@ -26,6 +27,39 @@ public class Menu1 extends World
         
         ExitBlock exit = new ExitBlock();
         addObject(exit,10,18);
+        Logo logo = new Logo();
+        addObject(logo,10,5);
+        Wall[] walls = new Wall[20];
+        for(int i=0; i<walls.length; i++) {
+            walls[i] = new Wall();
+            int posX = i;
+            int posY = 7;
+            addObject(walls[i], posX, posY);
+        }
+           for(int i=0; i<walls.length; i++) {
+            walls[i] = new Wall();
+            int posX = i;
+            int posY = 0;
+            addObject(walls[i], posX, posY);
+        }
+           for(int i=0; i<walls.length; i++) {
+            walls[i] = new Wall();
+            int posX = 0;
+            int posY = i;
+            addObject(walls[i], posX, posY);
+        }
+           for(int i=0; i<walls.length; i++) {
+            walls[i] = new Wall();
+            int posX = 20;
+            int posY = i;
+            addObject(walls[i], posX, posY);
+        }
+           for(int i=0; i<walls.length; i++) {
+            walls[i] = new Wall();
+            int posX = i;
+            int posY = 20;
+            addObject(walls[i], posX, posY);
+        }
         
     }
 }

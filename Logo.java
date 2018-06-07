@@ -14,6 +14,11 @@ public class Logo extends Block
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        Actor a = getOneIntersectingObject(Wall.class);
+        move(1);
+        if (a != null ){
+            setRotation(180);
+            move(2);}
+        //   this.getWorld().showText("pacarged", this.getX(), this.getY()-3); // Add your action code here.
+    }  
 }

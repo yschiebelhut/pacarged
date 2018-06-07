@@ -16,9 +16,11 @@ public class StartScreen extends MenuStreuerung
     private String space = "space";
     public void act() 
     {
+        Greenfoot.start();
+        this.getWorld().showText("Press Space to start", this.getX(), this.getY());// Add your action code here.
         if (Greenfoot.isKeyDown(enter)||Greenfoot.isKeyDown(space)){
         Greenfoot.setWorld(new Menu1());
-        this.getWorld().showText("Press Space to start", this.getX(), this.getY());// Add your action code here.
+        
     }    
 }
 }

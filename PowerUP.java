@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class PowerUP extends Actor {
     // get some basic data
     protected Labyrinth1 home = (Labyrinth1) this.getWorld();
-    // protected Pacman player = (Pacman) home.getObjects(Pacman.class).get(0);
+    protected Pacman player = (Pacman) home.getObjects(Pacman.class).get(0);
     
     public void effect() {}
 }

@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=Food
+comment0.text=\r\n\ Food\ are\ all\ the\ red\ objects\ all\ over\ the\ maze.\ Pacman\ can\ eat\ them,\ but\ they\ don't\ do\ anything\ on\ their\ own...\r\n\ \r\n\ @author\ ALL\r\n\ @version\ 1.0-final\r\n
+numComments=1

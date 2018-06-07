@@ -21,6 +21,7 @@ public class MenuStreuerung extends Actor
 
     public void act() 
     {
+        
         mover(); //Bewegen
         select();// dann auswählen
     }

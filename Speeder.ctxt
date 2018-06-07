@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Speeder
+comment0.text=\r\n\ Wpeeder\ is\ a\ powerup\ that\ temporay\ increases\ the\ step\ distance\ of\ pacman.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Wait\ for\ pacman\ to\ get\ in\ touch...\r\n
+comment2.params=
+comment2.target=void\ effect()
+numComments=3
