@@ -139,14 +139,6 @@ public class Pacman extends Actor {
     }
     
     /**
-     * setter for the step distance of pacman
-     * @param pSpeed new step distance
-     */
-    public void setSpeed(int pSpeed){
-        speed = pSpeed;
-    }
-
-    /**
      * Enables pacman to eat the points allover the maze and gives him points for doing this...
      */
     public void eatFood() {
