@@ -18,14 +18,27 @@ public class MenuStreuerung extends Actor
     protected String right = "d";
     protected String enter = "enter";
     protected String space = "space";
+    protected int onlyOnce = 1;
+    protected int onlyOnce2 = 1;
+    int x;
+    int y;
 
     public void act() 
     {
-        
+        //setNumbers();
         mover(); //Bewegen
         select();// dann auswählen
-    }
 
+        if  (onlyOnce == 1 )
+        {
+            this.getWorld().showText("Move down to select", this.getX()+4, this.getY());
+            onlyOnce = 2;
+
+            
+        }
+        delay();
+
+    }
     public void mover(){// bewegung der Menusteuerung
         if(Greenfoot.isKeyDown(up)||Greenfoot.isKeyDown("up")) {// entweder durch wasd
             setRotation(270);
@@ -62,4 +75,16 @@ public class MenuStreuerung extends Actor
         }
 
     }
+
+    /*public void setNumbers(){
+    if (onlyOnce2 == 1)
+    {x = getX();
+    y = getY();
+    onlyOnce2 = 2;}
+    }*/
+    public void delay (){
+        if (onlyOnce2 == 1){
+            Greenfoot.delay(10);
+            this.getWorld().showText(null, this.getX()+4, this.getY());
+            onlyOnce2 = 2;}}
 }

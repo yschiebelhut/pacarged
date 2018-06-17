@@ -23,10 +23,10 @@ public class Menu1 extends World
         MenuStreuerung menuStreuerung = new MenuStreuerung(); // Erstellt das Menu
         addObject(menuStreuerung,10,9);
         StartLevel1 startLevel1 = new StartLevel1();
-        addObject(startLevel1,10,12);
+        addObject(startLevel1,10,13);
         
         ExitBlock exit = new ExitBlock();
-        addObject(exit,10,18);
+        addObject(exit,10,17);
         Logo logo = new Logo();
         addObject(logo,10,5);
         Wall[] walls = new Wall[20];
