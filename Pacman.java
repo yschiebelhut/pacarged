@@ -134,7 +134,13 @@ public class Pacman extends Actor {
     public void setSpeed(int pSpeed){
         speed = pSpeed;
     }
-
+  
+     * Checks whether the Game is over due to missing lives or not.
+     */
+    public void checkEnd() {
+        if(this.lives<=0) Greenfoot.setWorld(new GameOver());
+    }
+    
     /**
      * Enables pacman to eat the points allover the maze and gives him points for doing this...
      */
