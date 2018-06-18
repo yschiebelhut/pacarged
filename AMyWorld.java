@@ -20,6 +20,7 @@ public class AMyWorld extends World
         
         StartScreen startScreen = new StartScreen(); // erstellt einen Button
         addObject(startScreen,10,10);
+        Greenfoot.start();
         
     }
 }
