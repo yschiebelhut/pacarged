@@ -11,7 +11,8 @@ public class Pacman extends Actor {
     protected int speed = 1; // step distance, used for powerups
     protected int counter = 0; // collected points are stored in here
     protected int lives = 3; // well, hope you can explain this to yourself
-
+	protected boolean eatGhosts = false;
+	
     // sets which keys can be used to control pacman
     protected String up = "w";
     protected String down = "s";
@@ -26,28 +27,30 @@ public class Pacman extends Actor {
         movement();
         eatFood();
         walkThroughBounds();
-    } 
+        checkEnd();
+    }
 
     /**
      * If no wall is in front, pacman just walks and turns around according to the keybindings set above.
      */
     public void movement() {
-        // TODO only allow rotation if there is no wall
+        int currentDirection = this.getRotation();
         if(Greenfoot.isKeyDown(up)||Greenfoot.isKeyDown("up")) {
             setRotation(270);
         }
-        if(Greenfoot.isKeyDown(down)||Greenfoot.isKeyDown("down")){
+        if(Greenfoot.isKeyDown(down)||Greenfoot.isKeyDown("down")) {
             setRotation(90);
         }
-        if(Greenfoot.isKeyDown(left)||Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown(left)||Greenfoot.isKeyDown("left")) {
             setRotation(180);
         }
-        if(Greenfoot.isKeyDown(right)||Greenfoot.isKeyDown("right")){
+        if(Greenfoot.isKeyDown(right)||Greenfoot.isKeyDown("right")) {
             setRotation(0);
         }
-        if (Greenfoot.isKeyDown(escape)){
+        if (Greenfoot.isKeyDown(escape)) {
             Greenfoot.setWorld(new MyWorld2());
         }
+        if(wallInFront()) setRotation(currentDirection);
         if(!wallInFront()) move(speed);
     }
 
@@ -124,17 +127,12 @@ public class Pacman extends Actor {
      * Checks whether there is a wall at the given position of not.
      */
     public boolean wallAtPosition(int posX, int posY) {
+        Labyrinth1 home = (Labyrinth1) this.getWorld();
+        if(home.getObjectsAt(posX, posY, Wall.class)!=null) return true;
         return false;
     }
     
     /**
-     * setter for the step distance of pacman
-     * @param pSpeed new step distance
-     */
-    public void setSpeed(int pSpeed){
-        speed = pSpeed;
-    }
-  
      * Checks whether the Game is over due to missing lives or not.
      */
     public void checkEnd() {
