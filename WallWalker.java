@@ -11,6 +11,14 @@ public class WallWalker extends PowerUP {
      * Wait for pacman to get in touch...
      */
     public void act() {
-        
+        int i = 0;
+        Labyrinth1 home = (Labyrinth1) this.getWorld();
+        Pacman player = (Pacman) getOneIntersectingObject(Pacman.class);
+        if(player!=null) {
+            Pacman.walkThroughWalls = true;
+            home.removeObject(this);
+            i = 45;
+        }
+        i--;
     }   
 }

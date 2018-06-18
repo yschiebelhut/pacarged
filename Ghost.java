@@ -10,10 +10,13 @@ import java.util.ArrayList; // for managing contact with other objects
  * @version 20180530
  */
 public class Ghost extends Actor {
+    protected static boolean canEatPacman = true;
+    
     public void act() {
         // call methods necessary for the ghosts behavior
         eatPacman();
         movement();
+        eatPacman();
     } 
 
     /**
@@ -137,7 +140,8 @@ public class Ghost extends Actor {
         Labyrinth1 home = (Labyrinth1) getWorld();
         
         // search for pacman in reach
-        if(getOneIntersectingObject(Pacman.class)!=null) {
+        // checks if the pill is enabled, so ghosts can't eat pacman
+        if((getOneIntersectingObject(Pacman.class)!=null) && Ghost.canEatPacman) {
             Pacman player = (Pacman) getOneIntersectingObject(Pacman.class);
             
             // reduce lives variable of pacman

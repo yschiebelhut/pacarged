@@ -1,4 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Pacman is the main actor.
@@ -10,9 +13,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Pacman extends Actor {
     protected int speed = 1; // step distance, used for powerups
     protected int counter = 0; // collected points are stored in here
+    protected int ghostcount = 0; // surveil how much pacman eats before he's to fat for the maze
     protected int lives = 3; // well, hope you can explain this to yourself
-	protected boolean eatGhosts = false;
-	
+    protected static boolean canEatGhosts = false; // used to switch between normal mode and pill mode
+    protected static boolean walkThroughWalls = false; // remembers if pacman is allowed to walk through walls
+
     // sets which keys can be used to control pacman
     protected String up = "w";
     protected String down = "s";
@@ -24,9 +29,11 @@ public class Pacman extends Actor {
      * Make pacman walk and do all the other things he needs to do...
      */
     public void act() {
+        eatGhosts();
         movement();
         eatFood();
         walkThroughBounds();
+        eatGhosts();
         checkEnd();
     }
 
@@ -50,8 +57,10 @@ public class Pacman extends Actor {
         if (Greenfoot.isKeyDown(escape)) {
             Greenfoot.setWorld(new MyWorld2());
         }
-        if(wallInFront()) setRotation(currentDirection);
-        if(!wallInFront()) move(speed);
+        if(!walkThroughWalls) {
+            if(wallInFront()) setRotation(currentDirection);
+            if(!wallInFront()) move(speed);
+        }
     }
 
     /**
@@ -62,7 +71,7 @@ public class Pacman extends Actor {
         Labyrinth1 home = (Labyrinth1) getWorld();
         int posX = getX();
         int posY = getY();
-        
+
         // for comments on this see Ghost.class
         if(posX==0) setLocation(home.getWidth()-1,posY);
         if(posX==home.getWidth()-1) setLocation(0,posY);
@@ -131,28 +140,51 @@ public class Pacman extends Actor {
         if(home.getObjectsAt(posX, posY, Wall.class)!=null) return true;
         return false;
     }
-    
+
     /**
      * Checks whether the Game is over due to missing lives or not.
      */
     public void checkEnd() {
         if(this.lives<=0) Greenfoot.setWorld(new GameOver());
     }
-    
+
     /**
      * Enables pacman to eat the points allover the maze and gives him points for doing this...
      */
     public void eatFood() {
         // get basic information
         Labyrinth1 home = (Labyrinth1) getWorld();
-        
+
         // check for food on the current field
         Food aktFressen = (Food)getOneIntersectingObject(Food.class);
-        
+
         // if there is food deal with it
         if(aktFressen!=null) {
             home.removeObject(aktFressen);
             this.counter++;
+        }
+    }
+
+    /**
+     * This method is called for a specified amount of time to enable
+     * pacman to eat the ghosts instead of being ate all the time.
+     */
+    public void eatGhosts() {
+        // get basic information
+        Labyrinth1 home = (Labyrinth1) getWorld();
+
+        // checks if the pill is enabled, so ghosts can't eat pacman
+        // checks for ghosts to eat
+        if((getOneIntersectingObject(Ghost.class) != null) && Pacman.canEatGhosts) {
+            List<Ghost> enemies = new ArrayList<Ghost>(getIntersectingObjects(Ghost.class));
+
+            // note down the calories ... well if ghosts contain some
+            this.ghostcount++;
+
+            // set the position of all ghosts into the origin of the ghosts
+            for(Ghost i : enemies) {
+                i.setLocation(10,10);
+            }
         }
     }
 }
