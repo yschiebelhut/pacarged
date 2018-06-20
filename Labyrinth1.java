@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
- * Write a description of class Labyrinth here.
+ * The home of pacman.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yannik Schiebelhut (Design from Nico)
+ * @version nearly_final_1.0
  */
 public class Labyrinth1 extends World {
     /**
@@ -14,30 +17,60 @@ public class Labyrinth1 extends World {
     public Labyrinth1() {    
         // Create a new world with 21x21 cells with a cell size of 1x1 pixels.
         super(21, 21, 35); 
+        
+        // make everything appear the right way
         setPaintOrder(Ghost.class,Pacman.class,PowerUP.class,Pill.class,Food.class,Wall.class);        
+
+        // make everything happen in the right order
         setActOrder(Pacman.class,Ghost.class);
+        
+        // paint everything
         prepare();
     }
-    
+
+    /**
+     * Manages all the stuff, essential for the game.
+     * Shows information about pacman.
+     * Manages "levels" (repaint food, etc)
+     */
     public void act() {
+        // get basic information
         Pacman player = (Pacman) getObjects(Pacman.class).get(0);
+        
+        // show information about pacman
         if(getObjects(Pacman.class)!=null) {
             showText(String.format("Score: %d", player.counter), 1, 0);
             showText(String.format("Lives: %d", player.lives), 1, getHeight()-1);
         }
+        
+        // wait for all food geting ate
         if(getObjects(Food.class).size()==0) {
-            prepareFood();
-            player.lives++;
+            prepareFood(); // repaint the food-dots
+            player.lives++; // asign one extra live to pacman
+            
+            // respawn pacman
+            removeObject(player);
+            addObject(player,10,19);
+
+            // set the position of all ghosts into the origin of the ghosts
+            List<Ghost> enemies = new ArrayList<Ghost>(getObjects(Ghost.class));
+            for(Ghost i : enemies) {
+                i.setLocation(10,10);
+            }
+            
+            // give the player some rest
+            Greenfoot.delay(7);
         }   
+        // old and obsolete version but usefull as fallback:
+        
         // if((player.counter%205==0)&&(player.counter!=0)) {
-            // prepareFood();
-            // player.lives++;
+        // prepareFood();
+        // player.lives++;
         // }
     }
-    
+
     /**
-     * Bereite die Welt für den Programmstart vor.
-     * Das heißt: Erzeuge die Anfangs-Objekte und füge sie der Welt hinzu.
+     * Stores the default layout of the world.
      */
     private void prepare() {
         Wall wall = new Wall();
@@ -896,12 +929,14 @@ public class Labyrinth1 extends World {
         addObject(ghost2,9,10);
         Ghost ghost3 = new Ghost();
         addObject(ghost3,11,10);
-        
+
         Pill pill = new Pill();
         addObject(pill,10,10);
     }
-    
-    
+
+    /**
+     * Only add the food to the world.
+     */
     public void prepareFood() {
         Food food = new Food();
         addObject(food,3,1);
