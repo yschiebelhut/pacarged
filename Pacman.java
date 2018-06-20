@@ -145,7 +145,7 @@ public class Pacman extends Actor {
      * Checks whether the Game is over due to missing lives or not.
      */
     public void checkEnd() {
-        if(this.lives<=0) Greenfoot.setWorld(new GameOver());
+        if(this.lives<=0) Greenfoot.setWorld(new GameOver(this.counter, this.ghostcount));
     }
 
     /**
