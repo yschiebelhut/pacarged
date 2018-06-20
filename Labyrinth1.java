@@ -25,13 +25,14 @@ public class Labyrinth1 extends World {
             showText(String.format("Score: %d", player.counter), 1, 0);
             showText(String.format("Lives: %d", player.lives), 1, getHeight()-1);
         }
-        if(getObjects(Food.class)==null) {
-            new Labyrinth1();
-        }
-        if((player.counter%205==0)&&(player.counter!=0)) {
+        if(getObjects(Food.class).size()==0) {
             prepareFood();
-            player.counter++;
-        }
+            player.lives++;
+        }   
+        // if((player.counter%205==0)&&(player.counter!=0)) {
+            // prepareFood();
+            // player.lives++;
+        // }
     }
     
     /**
