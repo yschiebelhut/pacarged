@@ -929,9 +929,6 @@ public class Labyrinth1 extends World {
         addObject(ghost2,9,10);
         Ghost ghost3 = new Ghost();
         addObject(ghost3,11,10);
-
-        Pill pill = new Pill();
-        addObject(pill,10,10);
     }
 
     /**

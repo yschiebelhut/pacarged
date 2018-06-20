@@ -15,29 +15,36 @@ public class Pill extends PowerUP {
      */
     public void act() {
         Labyrinth1 home = (Labyrinth1) this.getWorld();
-        Pacman player = (Pacman) getOneIntersectingObject(Pacman.class);
-        if(player != null) {
+        // Pacman player = (Pacman) getOneIntersectingObject(Pacman.class);
+        // if(player != null) {
+        if(getOneIntersectingObject(Pacman.class)!=null) {
             i = LIMIT;
             effect();
-            home.removeObject(this);        
+            setLocation(20,20);
+            // home.removeObject(this);        
         }
         if(i>0) {
-            home.showText(String.format("Pill duration: %d", this.i), 14, 0);
+            // Greenfoot.ask("Foo2");
+            // home.showText(String.format("Pill duration: %d", this.i), 14, 0);
+            i--;
         }
-        if(i<0 && effectPresent) undoEffect();
-        i--;
+        else undoEffect();
     }   
 
     @Override
     public void effect() {
         Pacman.canEatGhosts = true;
         Ghost.canEatPacman = false;
-        effectPresent = true;
+        this.effectPresent = true;
     }
 
     public void undoEffect() {
-        Pacman.canEatGhosts = false;
-        Ghost.canEatPacman = true;
-        effectPresent = false;
+        Labyrinth1 home = (Labyrinth1) this.getWorld();
+        if(effectPresent) {
+            Pacman.canEatGhosts = false;
+            Ghost.canEatPacman = true;
+            effectPresent = false;
+            home.removeObject(this);
+        }
     }
 }
