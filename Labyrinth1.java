@@ -26,6 +26,9 @@ public class Labyrinth1 extends World {
         
         // paint everything
         prepare();
+        
+        // set Speed for the game
+        Greenfoot.setSpeed(30);
     }
 
     /**
@@ -41,6 +44,7 @@ public class Labyrinth1 extends World {
         if(getObjects(Pacman.class)!=null) {
             showText(String.format("Score: %d", player.counter), 1, 0);
             showText(String.format("Lives: %d", player.lives), 1, getHeight()-1);
+            showText(String.format("ate Ghosts: %d", player.ghostcount), 14, 0);
         }
         
         // wait for all food geting ate

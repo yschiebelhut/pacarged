@@ -13,6 +13,7 @@ public class Pill extends PowerUP {
     /**
      * Wait for pacman to get in touch...
      */
+    @Override
     public void act() {
         // get some basic information
         Labyrinth1 home = (Labyrinth1) this.getWorld();
@@ -41,6 +42,7 @@ public class Pill extends PowerUP {
     /**
      * Redo what "effect()" does.
      */
+    @Override
     public void undoEffect() {
         // get some basic information
         Labyrinth1 home = (Labyrinth1) this.getWorld();

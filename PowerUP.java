@@ -8,9 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 0.1
  */
 public abstract class PowerUP extends Actor {
-    // get some basic data
-    protected Labyrinth1 home = (Labyrinth1) this.getWorld();
-    protected Pacman player = null;
-    
+    // methods to be implemented in the subclasses:
+    public void act() {}
     public void effect() {}
+    public void undoEffect() {}
 }
