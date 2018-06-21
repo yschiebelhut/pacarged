@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Pacman is the main actor.
  * The player controls him and tries to survive as long as possible while collecting many points.
  * 
- * @author Yannik Schiebelhut 
+ * @author Yannik Schiebelhut && Nico Balthazar
  * @version (at least not from today XD)
  */
 public class Pacman extends Actor {

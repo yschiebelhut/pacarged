@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Homescreen here.
+ * Write a description of class Menu1 here:
+ * I Don't know this too.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Benedikt Rölle 
+ * @version IDon'tKnow ~Yannik
  */
 public class Homescreen extends MenuStreuerung
 {

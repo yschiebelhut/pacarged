@@ -2,10 +2,11 @@ import greenfoot.*;
 import java.awt.Color;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu1 here.
+ * Write a description of class Menu1 here:
+ * I Don't know this too.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Benedikt Rölle 
+ * @version IDon'tKnow ~Yannik
  */
 public class Menu1 extends World
 

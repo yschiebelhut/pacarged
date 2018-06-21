@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 1.0-final
  */
 public class Shield extends PowerUP {
-    protected int LIMIT = 45; // number of steps pacman can take before the effect is over
+    protected int LIMIT = 30; // number of steps pacman can take before the effect is over
     protected int i = 0; // just a simple counter variable
     protected boolean effectPresent = false; // used to avoid conflicts with other PowerUPs
     /**

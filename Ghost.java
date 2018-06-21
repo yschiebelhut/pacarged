@@ -6,8 +6,8 @@ import java.util.ArrayList; // for managing contact with other objects
  * Ghosts is the oponent class of pacman.
  * Ghosts wander around the maze and if they get contact with pacman, they usually eat him up and this costs a life.
  * 
- * @author Yannik Schiebelhut 
- * @version 20180530
+ * @author Yannik Schiebelhut && Nico Balthazar
+ * @version 1.dontknow-final
  */
 public class Ghost extends Actor {
     protected static boolean canEatPacman = true;

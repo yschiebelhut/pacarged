@@ -933,6 +933,22 @@ public class Labyrinth1 extends World {
         addObject(ghost2,9,10);
         Ghost ghost3 = new Ghost();
         addObject(ghost3,11,10);
+        
+        Shield shield = new Shield();
+        addObject(shield,3,1);
+        Shield shield2 = new Shield();
+        addObject(shield2,17,1);
+        Shield shield3 = new Shield();
+        addObject(shield3,7,10);
+        Shield shield4 = new Shield();
+        addObject(shield4,13,10);
+        
+        Pill pill = new Pill();
+        addObject(pill,10,4);
+        Pill pill2 = new Pill();
+        addObject(pill2,3,17);
+        Pill pill3 = new Pill();
+        addObject(pill3,17,17);
     }
 
     /**
@@ -1347,5 +1363,21 @@ public class Labyrinth1 extends World {
         addObject(food205,9,15);
         Food food206 = new Food();
         addObject(food206,9,16);
+        
+        Shield shield = new Shield();
+        addObject(shield,3,1);
+        Shield shield2 = new Shield();
+        addObject(shield2,17,1);
+        Shield shield3 = new Shield();
+        addObject(shield3,7,10);
+        Shield shield4 = new Shield();
+        addObject(shield4,13,10);
+        
+        Pill pill = new Pill();
+        addObject(pill,10,4);
+        Pill pill2 = new Pill();
+        addObject(pill2,3,17);
+        Pill pill3 = new Pill();
+        addObject(pill3,17,17);
     }
 }

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOver here.
+ * Simply the EndScreen, displaying information about you gameplay.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yannik Schiebelhut 
+ * @version 1.2-final
  */
 public class GameOver extends World {
     protected int score;
@@ -16,18 +16,24 @@ public class GameOver extends World {
     public GameOver(int pScore, int pGhosts) {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        GreenfootImage background = new GreenfootImage("",0,Color.BLACK,Color.BLACK);
+        GreenfootImage background = new GreenfootImage("",0,Color.BLACK,Color.BLACK); // set black as background
         setBackground(background);
+
+        // information from pacman
         score = pScore;
         ghosts = pGhosts;
+        
         prepare();
     }
    
     public void act() {
+        // enable the player to quit the game
         if(Greenfoot.isKeyDown("escape")) {
             Greenfoot.stop();
             System.exit(0);
         }
+
+        // enable player to restart the game
         if(Greenfoot.isKeyDown("enter")) Greenfoot.setWorld(new Labyrinth1());
     }
     
