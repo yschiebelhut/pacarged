@@ -33,7 +33,7 @@ public class GameOver extends World {
     
     public void prepare() {
         this.showText("GameOver", 300, 100);
-        this.showText(String.format("Your scored %d points", this.score), 300, 150);
+        this.showText(String.format("You scored %d points", this.score), 300, 150);
         this.showText(String.format("You ate %d ghosts", this.ghosts), 300, 180);
         this.showText("Press Enter to Retry", 300, 320);
         this.showText("Press Escape to close the Game", 300, 350);
